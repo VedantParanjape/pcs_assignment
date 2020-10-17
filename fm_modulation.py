@@ -2,14 +2,6 @@ import numpy as np
 import matplotlib.pyplot as mpl
 import math
 
-def constrain(val, min, max):
-    if val > max:
-        return max
-    elif val < min:
-        return min
-    else:
-        return val
-
 file_name = input("Enter File Name: ")
 file_handle = open(file_name, "r")
 
@@ -21,16 +13,15 @@ for point in file_handle:
 input_signal = np.array(input_signal)
 
 mp = min(input_signal)
-deviation_ratio = constrain(float(input("Enter value of deviation ratio (0-1): ")), 0, 1)
+deviation_ratio = float(input("Enter value of deviation ratio: "))
 fc = float(input("Enter value of carrier frequency: "))
 time_gaps = 1 / (2*fc)
 number_of_input_points = len(input_signal)
 time_vector = np.linspace(0, 1, number_of_input_points)
 
 carrier_signal = np.cos(2*np.pi*fc*time_vector)
-output_signal = np.cos(2*np.pi*(fc + deviation_ratio*input_signal)*time_vector)
+output_signal = np.cos(2*np.pi*fc + deviation_ratio*input_signal)
 
-# 2*pi*ts*(fc + 1*ym)
 mpl.subplot(3,1,1)
 mpl.title('Frequency Modulation')
 mpl.plot(input_signal,'g')

@@ -63,3 +63,31 @@ Enter value of carrier frequency: 100000
 #### Cantina Band audio file as input
 
 ![](assets/figure_2_AM_cantina_band.png)
+
+# Frequency Modulation
+
+> Write a program in MATLAB/Python/Scilab (any) to generate an FM wave for a given deviation ratio and modulating signal. The deviation ratio, carrier frequency and modulating signal must be taken as input from user.
+
+> Plot one signal below the other in a single figure as subparts, for convenient visualization.
+
+To generate FM output signal, run the following command:
+
+```bash
+python3 fm_modulation.py
+```
+
+Output of the python file
+
+```bash
+Enter File Name: data.txt
+Enter value of deviation ratio: 10
+Enter value of carrier frequency: 100000000
+```
+
+#### Cosine signal as input
+
+![](assets/figure_3_FM_cos.png)
+
+#### Cantina Band audio file as input
+
+![](assets/figure_4_FM_cantina_band.png)
